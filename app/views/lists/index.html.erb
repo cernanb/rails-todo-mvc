@@ -1,0 +1,23 @@
+<section class="todoapp">
+	<header class="header">
+		<h1>My Lists</h1>
+		<!-- <input class="new-todo" placeholder="Make a new list" autofocus=""> -->
+    <%= form_for(@list) do |f| %>
+      <%= f.text_field :name, :class => "new-todo", :placeholder => (@list.errors.full_messages_for(:name).first || "Make a new list") %>
+    <% end %>
+	</header>
+	<section class="main" style="display: block;">
+		<ul class="todo-list">
+      <% @lists.each do |list| %>
+      <li>
+        <div class="view">
+          <label><%= link_to list.name, list_path(list) %></label>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+	</section>
+	<footer class="footer" style="display: block;">
+
+	</footer>
+</section>
