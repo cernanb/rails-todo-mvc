@@ -1,13 +1,14 @@
 <section class="todoapp">
-	<header class="header">
-		<h1>My Lists</h1>
-		<!-- <input class="new-todo" placeholder="Make a new list" autofocus=""> -->
+  <header class="header">
+    <h1>Your Lists</h1>
     <%= form_for(@list) do |f| %>
-      <%= f.text_field :name, :class => "new-todo", :placeholder => (@list.errors.full_messages_for(:name).first || "Make a new list") %>
+      <%= f.text_field :name, :class => "new-todo", :placeholder => (@list.errors.full_messages_for(:name).first || "Enter a new list name...") %>
+      <%= f.submit :style => "display: none" %>
     <% end %>
-	</header>
-	<section class="main" style="display: block;">
-		<ul class="todo-list">
+</form>
+  </header>
+  <section class="main">
+    <ul class="todo-list">
       <% @lists.each do |list| %>
       <li>
         <div class="view">
@@ -16,8 +17,7 @@
       </li>
       <% end %>
     </ul>
-	</section>
-	<footer class="footer" style="display: block;">
-
-	</footer>
+  </section>
+  <footer class="footer">
+  </footer>
 </section>
