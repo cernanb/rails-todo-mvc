@@ -33,3 +33,5 @@ Validate that items have a description
 #Step 6: Refactor 1: Start using partials in lists/show because it's a bit messy
 
 #Step 7: Deleting items from a list
+
+<button class="destroy" ng-click="removeTodo(todo)"></button>

@@ -10,9 +10,15 @@ class ItemsController < ApplicationController
   end
 
   def update
-    # raise item_params.inspect
     @item = Item.find(params[:id])
     @item.update(item_params)
+
+    redirect_to list_path(@item.list)
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.delete
 
     redirect_to list_path(@item.list)
   end
