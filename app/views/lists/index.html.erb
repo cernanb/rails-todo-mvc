@@ -19,5 +19,10 @@
     </ul>
   </section>
   <footer class="footer">
+
   </footer>
 </section>
+<footer class="info">
+  <p>You're logged in as: <%= @current_user.email %></p>
+  <%= link_to "Logout", logout_path %>
+</footer>
