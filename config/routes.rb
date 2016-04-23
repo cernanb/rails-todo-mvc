@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   root 'lists#index'
   get '/logout' => 'sessions#destroy'
+  get '/auth/github/callback' => 'sessions#create'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
